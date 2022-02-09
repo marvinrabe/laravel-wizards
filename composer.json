@@ -4,8 +4,7 @@
   "keywords": [
     "php",
     "laravel",
-    "wizards",
-    "testing"
+    "wizards"
   ],
   "homepage": "https://github.com/marvinrabe/laravel-wizards",
   "license": "MIT",
