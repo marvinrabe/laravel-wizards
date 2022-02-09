@@ -14,6 +14,6 @@ class Wizard
 
     public function __construct(public mixed $payload)
     {
-        $this->id = Str::uuid();
+        $this->id = (string) Str::uuid();
     }
 }
