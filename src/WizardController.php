@@ -5,7 +5,6 @@ namespace MarvinRabe\LaravelWizards;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Route;
 
 abstract class WizardController
 {
@@ -36,11 +35,10 @@ abstract class WizardController
 
     protected function redirect(Wizard $wizard): RedirectResponse
     {
-        return Redirect::route(Route::currentRouteName(), [
-                'id' => $wizard->id,
-                'step' => $wizard->step
-            ]
-        );
+        return Redirect::action($this::class, [
+            'id' => $wizard->id,
+            'step' => $wizard->step
+        ]);
     }
 
     protected function handleGet(Request $request, Wizard $wizard, int $step): mixed
