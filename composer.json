@@ -1,0 +1,49 @@
+{
+  "name": "marvinrabe/laravel-wizards",
+  "description": "Simple Wizard Controller for Laravel.",
+  "keywords": [
+    "php",
+    "laravel",
+    "wizards",
+    "testing"
+  ],
+  "homepage": "https://github.com/marvinrabe/laravel-wizards",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Marvin Rabe",
+      "email": "marvin@rabe.pro",
+      "homepage": "https://www.rabe.pro",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=8.0.0",
+    "illuminate/contracts": ">=8.0.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^6.0",
+    "phpunit/phpunit": "^9.5",
+    "vimeo/psalm": "^4.20"
+  },
+  "autoload": {
+    "psr-4": {
+      "MarvinRabe\\LaravelWizards\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MarvinRabe\\LaravelWizards\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "psalm": "vendor/bin/psalm",
+    "test": "vendor/bin/phpunit --colors=always",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
