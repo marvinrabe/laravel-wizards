@@ -40,6 +40,13 @@
     "test": "vendor/bin/phpunit --colors=always",
     "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
   },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "MarvinRabe\\LaravelWizards\\ServiceProvider"
+      ]
+    }
+  },
   "config": {
     "sort-packages": true
   },
