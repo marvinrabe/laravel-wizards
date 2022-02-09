@@ -1,6 +1,6 @@
 <?php
 
-namespace MarvinRabe\LaravelWizardsTest\Tests;
+namespace MarvinRabe\LaravelWizards\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
 
