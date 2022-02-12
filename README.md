@@ -34,7 +34,7 @@ use Illuminate\Http\Request;
 use MarvinRabe\LaravelWizards\Wizard;
 use MarvinRabe\LaravelWizards\WizardController;
 
-class FileImportController extends WizardController
+class OrderWizardController extends WizardController
 {
     // Prepare a payload. This payload will be available in $wizard->payload on each step. It will be saved
     // automatically after each step{number}Submit method. It is used to store each partial result until onFinish.
