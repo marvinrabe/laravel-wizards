@@ -66,7 +66,7 @@ abstract class WizardController
             $this->{$method}($request, $wizard);
         }
 
-        $wizard->step += 1;
+        $wizard->step = $step+1;
 
         if (method_exists($this, 'step'.$wizard->step)) {
             $this->repository->save($wizard);
