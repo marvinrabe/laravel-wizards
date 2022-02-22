@@ -39,7 +39,7 @@ class OrderWizardController extends WizardController
     // Prepare a payload. This payload will be available in $wizard->payload on each step. It will be saved
     // automatically after each step{number}Submit method. It is used to store each partial result until onFinish.
     // The simplest payload is an array. But you could use anything you want. It only needs to be serializable!
-    public function preparePayload(Request $request): array
+    public function preparePayload(Request $request, Wizard $wizard): array
     {
         return [];
     }

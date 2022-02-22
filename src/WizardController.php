@@ -16,7 +16,9 @@ abstract class WizardController
     {
         // Prepare new Wizard
         if ($id === null) {
-            $wizard = new Wizard($this->preparePayload($request));
+            $wizard = new Wizard();
+            $payload = $this->preparePayload($request, $wizard);
+            $wizard->setPayload($payload);
             $this->repository->save($wizard);
             return $this->redirect($wizard);
         }
@@ -66,7 +68,7 @@ abstract class WizardController
             $this->{$method}($request, $wizard);
         }
 
-        $wizard->step = $step+1;
+        $wizard->step = $step + 1;
 
         if (method_exists($this, 'step'.$wizard->step)) {
             $this->repository->save($wizard);
@@ -79,7 +81,7 @@ abstract class WizardController
         }
     }
 
-    abstract function preparePayload(Request $request): mixed;
+    abstract function preparePayload(Request $request, Wizard $wizard): mixed;
 
     abstract function onFinish(Request $request, Wizard $wizard): mixed;
 }

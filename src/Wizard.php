@@ -12,8 +12,15 @@ class Wizard
 
     public int $maxSteps = 0;
 
-    public function __construct(public mixed $payload)
+    public mixed $payload = null;
+
+    public function __construct()
     {
         $this->id = (string) Str::uuid();
+    }
+
+    public function setPayload(mixed $payload): self {
+        $this->payload = $payload;
+        return $this;
     }
 }
