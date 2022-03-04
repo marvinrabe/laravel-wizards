@@ -26,7 +26,11 @@ abstract class WizardController
             return $this->redirect($wizard);
         }
 
-        $wizard = $this->repository->get($id);
+        try {
+            $wizard = $this->repository->get($id);
+        } catch (WizardNotFoundException $exception) {
+            abort(410);
+        }
 
         // Redirect to latest Step
         if ($step === null) {
