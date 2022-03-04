@@ -12,8 +12,11 @@ abstract class WizardController
     {
     }
 
-    public function __invoke(Request $request, string $id = null, int $step = null): mixed
+    public function __invoke(Request $request): mixed
     {
+        $id = $request->route('wizard');
+        $step = $request->route('step');
+
         // Prepare new Wizard
         if ($id === null) {
             $wizard = new Wizard();
@@ -38,7 +41,8 @@ abstract class WizardController
     protected function redirect(Wizard $wizard): RedirectResponse
     {
         return Redirect::action($this::class, [
-            'id' => $wizard->id,
+            ...\Illuminate\Support\Facades\Request::route()->parameters(),
+            'wizard' => $wizard->id,
             'step' => $wizard->step
         ]);
     }

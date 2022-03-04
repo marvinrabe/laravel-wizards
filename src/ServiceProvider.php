@@ -15,7 +15,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     public function boot(): void
     {
         Route::macro('wizard', function (string $uri, mixed $action) {
-            return Route::match(['get', 'post'], $uri.'/{id?}/{step?}', $action);
+            return Route::match(['get', 'post'], $uri.'/{wizard?}/{step?}', $action);
         });
     }
 }
